@@ -4,6 +4,7 @@ backup/
 .ssh/
 .nano/
 .cache/
+.20??/
 
 # JPEG
 *.jpg
