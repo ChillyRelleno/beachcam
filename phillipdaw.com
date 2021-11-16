@@ -55,7 +55,7 @@ server {
 		#try_files $uri $uri/ =404;
 	}
 	location /beachcam {
-		alias /home/beachcam/cam/
+		#alias /home/beachcam/cam/
 		autoindex on;
 		index index.html
 	}
