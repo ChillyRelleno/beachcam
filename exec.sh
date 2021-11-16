@@ -1,4 +1,4 @@
-cd /home/beachcam/cam
+cd /home/beachcam/code
 ./flattenDir.sh && \
 ./prepareGif.sh && \
 ./makeGif.sh && \
