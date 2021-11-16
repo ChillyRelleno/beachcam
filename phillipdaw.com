@@ -40,8 +40,14 @@ server {
 	#index index.html index.htm index.nginx-debian.html;
 
 	server_name phillipdaw.com www.phillipdaw.com;
-
-
+	location = /beachcam {
+    		rewrite ^ /beachcam/ permanent;
+	}
+	location /beachcam/ {
+                alias /home/beachcam/;
+                autoindex on;
+		index code/index.html;
+	}
 	location / {
 		#proxy_pass http://127.0.0.1:4443;
 		
@@ -50,15 +56,11 @@ server {
 
 		rewrite ^ /rideonfire/$uri; 
 
-		index index.html
+		index index.html;
 		try_files $uri $uri/ /index.html;
 		#try_files $uri $uri/ =404;
 	}
-	location /beachcam {
-		#alias /home/beachcam/cam/
-		autoindex on;
-		index index.html
-	}
+
         location /rideonfire {
 		alias /var/www/rideonfire/html/public/;
 		autoindex on;
